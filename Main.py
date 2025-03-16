@@ -162,24 +162,25 @@ def gifts():
     # Inisialisasi session state jika belum ada
     if "selected_gift" not in st.session_state:
         st.session_state.selected_gift = None
-        
+
     st.markdown(
-    """
-    <div style="
-            border: 0px solid white;  
-            padding: 10x; 
-            border-radius: 10px; 
-            background: linear-gradient(to bottom, #6c7487, white);  /* Gradasi dari grey ke white */ 
-            color: navy; 
-            text-align: center; 
-            max-width: 8000px; 
-            margin: auto;
-            box-shadow: 5px 5px 15px rgba(0.2, 0, 0, 0.2);  
-        ">
-    <h1 style="text-align: center; color: black;">🌟 Welcome to the gift shop! 🌟</h1>
-    """,
-    unsafe_allow_html=True
-)
+        """
+        <div style="
+                border: 0px solid white;  
+                padding: 10x; 
+                border-radius: 10px; 
+                background: linear-gradient(to bottom, #6c7487, white);  
+                color: navy; 
+                text-align: center; 
+                max-width: 8000px; 
+                margin: auto;
+                box-shadow: 5px 5px 15px rgba(0.2, 0, 0, 0.2);  
+            ">
+        <h1 style="text-align: center; color: black;">🌟 Welcome to the gift shop! 🌟</h1>
+        """,
+        unsafe_allow_html=True
+    )
+
     st.markdown("  ")
     # Gambar gift shop
     col1, col2, col3 = st.columns([0.4, 3, 0.4])
@@ -192,13 +193,14 @@ def gifts():
         """,
         unsafe_allow_html=True
     )
+
     # Styling tombol dengan CSS
     st.markdown(
         """
         <style>
             .stButton > button {
-                background-color: #75839e; /* Warna grey */
-                color: black; /* Warna teks hitam */
+                background-color: #75839e;
+                color: black;
                 font-size: 18px;
                 font-weight: bold;
                 padding: 15px 25px;
@@ -208,7 +210,7 @@ def gifts():
                 transition: 0.3s;
             }
             .stButton > button:hover {
-                background-color: #ccd6eb; /* Warna abu-abu muda saat hover */
+                background-color: #ccd6eb;
             }
         </style>
         """,
@@ -218,13 +220,13 @@ def gifts():
     # Menggunakan kolom agar tombol berada di tengah
     col1, col2, col3 = st.columns([0.5, 2, 0.5])
 
-    with col2:  # Semua tombol ada di kolom tengah agar sejajar dengan teks
+    with col2:
         btn_col1, btn_col2, btn_col3 = st.columns(3)
-        
+
         with btn_col1:
             if st.button("T-SHIRT"):
                 st.session_state.selected_gift = "T-SHIRT"
-                
+
         with btn_col2:
             if st.button("PERFUME"):
                 st.session_state.selected_gift = "PERFUME"
