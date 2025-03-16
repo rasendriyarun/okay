@@ -159,6 +159,10 @@ def gifts():
     import time
     import numpy as np
 
+    # Inisialisasi session state jika belum ada
+    if "selected_gift" not in st.session_state:
+        st.session_state.selected_gift = None
+        
     st.markdown(
     """
     <div style="
